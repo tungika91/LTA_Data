@@ -28,11 +28,7 @@ def getBusArrival(busStop):
     bus_df['ETA_min'] = (bus_df['EstimatedArrival'] - pd.Timestamp.now(timezone.utc)).dt.components['minutes']
     bus_df = bus_df[['EstimatedArrival', 'ServiceNo', 'Type', 'Feature', 'ETA_min']]
     return bus['ServiceNo'], bus_df
-
-def addLabel(x,y,text):
-    for i in range(len(x)):
-        ax.text(x=x[i], y=(y[i]+0.5), s=text[i], ha = 'center', weight='bold')
-
+    
 fig, ax = plt.subplots(2,1, figsize=(6,8))
 for i, busStop in enumerate(BUS_STOPS):
     busNo, bus_df = getBusArrival(busStop)
@@ -51,6 +47,8 @@ for i, busStop in enumerate(BUS_STOPS):
     ax[i].yaxis.grid(True, color='#EEEEEE')
     ax[i].xaxis.grid(False)
     ax[i].axhline(y=WALKING_MINUTES, color='red',linestyle = ":")
-    # addLabel(x,y,text)
+    for i in range(len(x)):
+        ax.text(x=x[i], y=(y[i]+0.5), s=text[i], ha = 'center', weight='bold')
 
+fig.tight_layout()
 st.pyplot(fig)
