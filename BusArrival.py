@@ -47,8 +47,8 @@ for i, busStop in enumerate(BUS_STOPS):
     ax[i].yaxis.grid(True, color='#EEEEEE')
     ax[i].xaxis.grid(False)
     ax[i].axhline(y=WALKING_MINUTES, color='red',linestyle = ":")
-    for i in range(len(x)):
-        ax.text(x=x[i], y=(y[i]+0.5), s=text[i], ha = 'center', weight='bold')
+    for j in range(len(x)):
+        ax.text(x=x[j], y=(y[j]+0.5), s=text[j], ha = 'center', weight='bold')
 
 fig.tight_layout()
 st.pyplot(fig)
