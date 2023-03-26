@@ -3,8 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime, timezone
 import numpy as np
-import streamlit as stl
+import streamlit as st
 
+st.title('Bus Arrival API - LTA')
 # Global Variables
 headers = { 
     'AccountKey' : 'LLS5w+z5TuiSZjQQz/1FMw==',
