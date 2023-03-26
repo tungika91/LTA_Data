@@ -33,7 +33,7 @@ def addLabel(x,y,text):
     for i in range(len(x)):
         ax.text(x=x[i], y=(y[i]+0.5), s=text[i], ha = 'center', weight='bold')
 
-fig, ax = plt.subplots(1,2, figsize=(12,4))
+fig, ax = plt.subplots(2,1, figsize=(6,8))
 for i, busStop in enumerate(BUS_STOPS):
     busNo, bus_df = getBusArrival(busStop)
     # Label the ETA 
