@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 import numpy as np
 import streamlit as st
 
-st.title('Bus from SLB SWTC to Joo Koon MRT')
+st.title('Bus from SLB SWTC to Joo Koon')
 # Global Variables
 headers = { 
     'AccountKey' : 'LLS5w+z5TuiSZjQQz/1FMw==',
@@ -29,7 +29,7 @@ def getBusArrival(busStop):
     bus_df = bus_df[['EstimatedArrival', 'ServiceNo', 'Type', 'Feature', 'ETA_min']]
     return bus['ServiceNo'], bus_df
     
-fig, ax = plt.subplots(2,1, figsize=(6,8))
+fig, ax = plt.subplots(2,1, figsize=(6,9))
 for i, busStop in enumerate(BUS_STOPS):
     busNo, bus_df = getBusArrival(busStop)
     # Label the ETA 
