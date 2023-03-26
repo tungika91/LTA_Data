@@ -51,6 +51,6 @@ for i, busStop in enumerate(BUS_STOPS):
     ax[i].yaxis.grid(True, color='#EEEEEE')
     ax[i].xaxis.grid(False)
     ax[i].axhline(y=WALKING_MINUTES, color='red',linestyle = ":")
-    addLabel(x,y,text)
+    # addLabel(x,y,text)
 
 st.pyplot(fig)
