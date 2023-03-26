@@ -41,7 +41,7 @@ for i, busStop in enumerate(BUS_STOPS):
     ax[i].spines['top'].set_visible(False)
     ax[i].spines['right'].set_visible(False)
     ax[i].bar(bus_df.index, bus_df['ETA_min'], width=0.4)
-    ax[i].set_ylabel('ETA (mins)')
+    ax[i].set_ylabel('Waiting time (mins)')
     ax[i].set_title(f"Estimated Time of Arrival - Bus {busNo}", pad=10)
     ax[i].set_axisbelow(True)
     ax[i].yaxis.grid(True, color='#EEEEEE')
