@@ -35,7 +35,7 @@ for i, busStop in enumerate(BUS_STOPS):
     # Label the ETA 
     x = np.array(bus_df.index)
     y = np.array(bus_df['ETA_min'])
-    text = np.array(bus_df['EstimatedArrival'].dt.strftime("%H:%M").values)                     
+    label = np.array(bus_df['EstimatedArrival'].dt.strftime("%H:%M").values)                     
 
     # Visualization
     ax[i].spines['top'].set_visible(False)
@@ -48,7 +48,7 @@ for i, busStop in enumerate(BUS_STOPS):
     ax[i].xaxis.grid(False)
     ax[i].axhline(y=WALKING_MINUTES, color='red',linestyle = ":")
     for j in range(len(x)):
-        ax.text(x=x[j], y=(y[j]+0.5), s=text[j], ha = 'center', weight='bold')
+        ax.text(x=x[j], y=(y[j]+0.5), s=label[j], ha = 'center', weight='bold')
 
 fig.tight_layout()
 st.pyplot(fig)
