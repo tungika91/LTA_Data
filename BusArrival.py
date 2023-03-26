@@ -15,7 +15,7 @@ URL_BUS_ARRIAVL = "http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2?
 BUS_STOPS = ['23021', '23209']
 WALKING_MINUTES = 6
 
-def getBusArrival(busStop = BUS_STOP_1):
+def getBusArrival(busStop):
     # Data extraction
     busArrival = requests.get(URL_BUS_ARRIAVL + busStop, headers=headers)
     bus_list = busArrival.json()['Services']
