@@ -48,3 +48,5 @@ ax.yaxis.grid(True, color='#EEEEEE')
 ax.xaxis.grid(False)
 ax.axhline(y=WALKING_MINUTES, color='red',linestyle = ":")
 addLabel(x,y,text)
+
+st.pyplot(fig)
